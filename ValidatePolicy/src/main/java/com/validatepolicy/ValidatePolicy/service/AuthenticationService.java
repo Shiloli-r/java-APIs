@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @Service
 public class AuthenticationService {
-    private List<Authentication> authList;
+    public List<Authentication> authList;
 
     public AuthenticationService(){
         authList = new ArrayList<>();
