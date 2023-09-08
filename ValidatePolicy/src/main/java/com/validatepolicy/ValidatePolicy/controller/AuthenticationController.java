@@ -3,7 +3,7 @@ package com.validatepolicy.ValidatePolicy.controller;
 import com.validatepolicy.ValidatePolicy.model.Authentication;
 import com.validatepolicy.ValidatePolicy.response.ErrorDesc;
 import com.validatepolicy.ValidatePolicy.request.RequestPayload;
-import com.validatepolicy.ValidatePolicy.response.ResponsePayload;
+import com.validatepolicy.ValidatePolicy.response.AuthResponsePayload;
 import com.validatepolicy.ValidatePolicy.service.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,8 +24,8 @@ public class AuthenticationController {
     }
 
     @PostMapping(produces = "application/json", consumes = "application/json")
-    public ResponseEntity<ResponsePayload> processRequest(@RequestBody RequestPayload requestPayload) {
-        ResponsePayload response = new ResponsePayload();
+    public ResponseEntity<AuthResponsePayload> processRequest(@RequestBody RequestPayload requestPayload) {
+        AuthResponsePayload response = new AuthResponsePayload();
 
         // Validate the API user and password
 
@@ -43,6 +43,7 @@ public class AuthenticationController {
                 errorDesc.setExpiry(expiry);
 
                 response.setError_desc(errorDesc);
+                break; // exit the for loop
 
             }
             else{
