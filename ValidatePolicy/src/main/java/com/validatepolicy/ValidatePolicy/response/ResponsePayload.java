@@ -1,6 +1,5 @@
 package com.validatepolicy.ValidatePolicy.response;
-
-public class AuthResponsePayload {
+public class ResponsePayload {
     private String error_code;
     private ErrorDesc error_desc;
 
