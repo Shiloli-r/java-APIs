@@ -58,6 +58,7 @@ public class ValidatePolicyController {
             for (Policy policy : policyService.policyList){
                 if(Objects.equals(policy.getPolicyNo(), requestPayload.getMessageBody().getPolicyNo()) && Objects.equals(policy.getBankCode(), requestPayload.getMessageBody().getBankCode())){
                     // policy number and Bank Code exist
+                    // TODO: Authentication and Token verification
                     response.setError_code("00");
 
                     ErrorDesc errorDesc = new ErrorDesc();
