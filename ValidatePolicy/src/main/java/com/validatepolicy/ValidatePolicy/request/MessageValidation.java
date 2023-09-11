@@ -9,7 +9,16 @@ public class MessageValidation {
     @JsonProperty("api_password")
     private String apiPassword;
 
-    // getters and setters
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+// getters and setters
 
     public String getApiUser() {
         return apiUser;

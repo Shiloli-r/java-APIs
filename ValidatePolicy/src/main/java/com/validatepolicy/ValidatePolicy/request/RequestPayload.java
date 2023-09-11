@@ -9,6 +9,17 @@ public class RequestPayload {
     @JsonProperty("message_route")
     private MessageRoute messageRoute;
 
+    @JsonProperty("message_body")
+    private MessageBody messageBody;
+
+    public MessageBody getMessageBody() {
+        return messageBody;
+    }
+
+    public void setMessageBody(MessageBody messageBody) {
+        this.messageBody = messageBody;
+    }
+
     public MessageValidation getMessageValidation() {
         return messageValidation;
     }
