@@ -36,7 +36,7 @@ public class ValidatePolicyController {
             // Validate the API user and password
             for (Authentication authentication : authenticationService.authList) {
                 if (Objects.equals(authentication.getApi_user(), requestPayload.getMessageValidation().getApiUser()) && Objects.equals(authentication.getApi_password(), requestPayload.getMessageValidation().getApiPassword())) {
-                    // Create the response payload
+                    // Username and password correct
                     final String token = authenticationService.generateToken();
                     final String expiry = authenticationService.generateTimeStamp();
                     response.setError_code("00");
@@ -49,9 +49,9 @@ public class ValidatePolicyController {
                     break; // exit the for loop
 
                 } else {
-                    // create the response payload
+                    // username and password Incorrect
                     response.setError_code("01");
-                    // TODO: Set Error Desc to "Invalid API consumer"
+                    response.setError_desc("Invalid API Consumer");
                 }
             }
         } else if (Objects.equals(requestPayload.getMessageRoute().getInterfaceName(), "CUSTOMER_INFO")) {
@@ -87,6 +87,9 @@ public class ValidatePolicyController {
                 }
 
             }
+        } else { // Unknown interface
+            response.setError_code("01");
+            response.setError_desc("Object reference not set to an instance of an object.");
         }
 
         return new ResponseEntity<>(response, HttpStatus.OK);

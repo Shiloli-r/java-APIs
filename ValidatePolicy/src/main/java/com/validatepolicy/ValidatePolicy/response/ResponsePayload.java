@@ -1,7 +1,7 @@
 package com.validatepolicy.ValidatePolicy.response;
 public class ResponsePayload {
     private String error_code;
-    private ErrorDesc error_desc;
+    private Object error_desc;
 
     // getters and setters
 
@@ -13,11 +13,11 @@ public class ResponsePayload {
         this.error_code = error_code;
     }
 
-    public ErrorDesc getError_desc() {
+    public Object getError_desc() {
         return error_desc;
     }
 
-    public void setError_desc(ErrorDesc error_desc) {
+    public void setError_desc(Object error_desc) {
         this.error_desc = error_desc;
     }
 }
