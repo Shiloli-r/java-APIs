@@ -33,8 +33,8 @@ public class LoggingFilter extends OncePerRequestFilter {
                 response.getCharacterEncoding());
 
         LOGGER.info(
-                "METHOD={}; URI={}; REQUEST PAYLOAD={}; RESPONSE CODE={}; RESPONSE PAYLOAD={}; TIME TAKEN={}",
-                request.getMethod(), request.getRequestURI(), requestBody, response.getStatus(), responseBody,
+                "{}: METHOD={}; URI={}; REQUEST PAYLOAD={}; RESPONSE CODE={}; RESPONSE PAYLOAD={}; TIME TAKEN={}",
+                 request.getRemoteAddr(), request.getMethod(), request.getRequestURI(), requestBody, response.getStatus(), responseBody,
                 timeTaken);
         responseWrapper.copyBodyToResponse();
     }
