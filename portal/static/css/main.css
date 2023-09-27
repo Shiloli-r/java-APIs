@@ -1,0 +1,52 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    background-color: rgba(255, 135, 135, 0.07);
+    /* background-image: linear-gradient( to top, #ffffff 11.2%, rgb(235, 235, 235) 92.5% ); */
+    /* color: rgba(255, 135, 135, 0.07);; */
+}
+
+footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+}
+
+.footer{
+    margin: 0;
+    padding: 0;
+}
+
+.footer-title{
+    color: black !important;
+    font-weight: 600;
+}
+
+#footer{
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer-item{
+    margin: 5px 15px;
+    font-size: 0.9em;
+    text-align: left;
+    width: 100%;
+}
+
+#copyright{
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 0.8em;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.78);
+}
+
+/* *********** */

@@ -10,6 +10,8 @@
 
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
     <!--Import materialize.css-->
      <!-- Compiled and minified CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -19,9 +21,8 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
 
     {% block style %}{% endblock style %}
 </head>
@@ -38,15 +39,18 @@
       </nav>
     {% block body%} {% endblock %}
     {% comment %} footer {% endcomment %}
-    <div class="footer">
-        <div id="footer">
+    <footer>
+        <div class="foot">
+            <div id="foot">
+            
+            </div>
         
+            <div id="copyright">
+            <p> Copyright &copy; portal 2023 </p> 
+            </div>
         </div>
+    </footer>
     
-        <div id="copyright">
-        <p> Copyright &copy; portal 2023 </p> 
-        </div>
-    </div>
     <script>
         document.getElementById("menu-button")
             .addEventListener("click", function (e){
