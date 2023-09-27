@@ -32,11 +32,11 @@
         <div class="nav-wrapper white">
           <a href="/" class="brand-logo"><img class="logo-img responsive-img" src="{% static 'images/logo.png' %}" width="90" height="80"></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li class=""><a href="/" class="black-text">Home</a></li>
+            <li class="/home"><a href="/" class="black-text">Home</a></li>
             {% if user.is_authenticated  %}
             <li class=""><a href="logout" class="black-text">Log Out</a></li>
             {% else %}
-            <li class=""><a href="login" class="black-text">Log In</a></li>
+            <li class=""><a href="/" class="black-text">Log In</a></li>
             {% endif %}
 
             

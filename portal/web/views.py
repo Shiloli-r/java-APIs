@@ -5,11 +5,36 @@ from django.contrib.auth.models import User
 
 from web.forms import UserLoginForm, UserRegistrationForm
 
+import pymssql 
+
+
 # Create your views here.
 @login_required
 def home(request):
     next = request.GET.get('next')
-    return render(request, 'index.html')
+
+    # connect to the db
+    server = '10.4.115.115'
+    database = 'Integrator'
+    user = 'Integration'
+    password = 'NoLies#23'
+
+    conn = pymssql.connect(server, user, password, database)
+    cursor = conn.cursor(as_dict=True)
+    fields = []
+
+    cursor.execute('SELECT * FROM icea_request_validation')
+    print(cursor)
+    for row in cursor:
+        fields.append(row)
+        print("ID=%d, policy_number=%s" % (row['id'], row['policy_number']))
+
+    conn.close()
+    context = {
+        'fields': fields,
+    }
+
+    return render(request, 'index.html', context=context)
 
 def signup(request):
     signup = UserRegistrationForm(request.POST or None)
