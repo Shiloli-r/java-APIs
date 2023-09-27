@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load render_table from django_tables2 %}
 
 {% block meta-tags %}
 
@@ -8,10 +9,13 @@
 
 {% block body %}
 <h3 class="center">Policy Validation Requests</h3>
-{% for field in fields %}
-    {{ field }}
-    <br><br>
-{% endfor %}
+<div class="my-table-container">
+    <div class="my-table">
+        {% render_table table %}
+    </div>
+</div>
+
+
 
 {% comment %} contact us {% endcomment %}
 

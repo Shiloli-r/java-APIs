@@ -5,7 +5,9 @@ from django.contrib.auth.models import User
 
 from web.forms import UserLoginForm, UserRegistrationForm
 
-import pymssql 
+import pymssql
+
+from web.tables import FieldsTable 
 
 
 # Create your views here.
@@ -27,11 +29,11 @@ def home(request):
     print(cursor)
     for row in cursor:
         fields.append(row)
-        print("ID=%d, policy_number=%s" % (row['id'], row['policy_number']))
 
     conn.close()
+    table = FieldsTable(fields)
     context = {
-        'fields': fields,
+        'table': table,
     }
 
     return render(request, 'index.html', context=context)
